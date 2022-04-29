@@ -1,6 +1,6 @@
 # Escola API
 
-> ## Descrição da aplicação:
+> ## Descrição da aplicação
 
 A aplicação é uma API no padrão REST que gerencia e automatiza um banco de dados de uma escola. Para isso foi utilizado o banco de dados relacional SQLite. Foi utilização o padrão MVC e o padrão DAO na construção do projeto.
 
@@ -8,14 +8,14 @@ A aplicação é uma API no padrão REST que gerencia e automatiza um banco de d
 <br>
 <br>
 
-> ## Tecnologias utilizadas:
+> ## Tecnologias utilizadas
 
 Para o desenvolvimento foi utilizado JavaScript com NodeJS, com o framework Express, além do banco de dados relacional SQLite hospedado pela ferramenta de cloud Heroku.
 
 <br>
 <br>
 
-> ## Dependencias necessárias:
+> ## Dependências necessárias
 
 ```js
 "dependencies": {
@@ -38,7 +38,7 @@ git clone https://github.com/hadmoraes/ToDoAPI && cd ToDoAPI && npm install cors
 <br>
 <br>
 
-> ## Dependencias de desenvolvimento:
+> ## Dependências de desenvolvimento
 
 ```js
 "devDependencies": {
@@ -49,13 +49,12 @@ Essas são as dependencias necessárias apenas para o ambiente de desenvolviment
 
 ```
 npm install jest
-
 ```
 
 <br>
 <br>
 
-> ## Inicialização da aplicação via terminal:
+> ## Inicialização da aplicação via terminal
 
 Para inicializar a aplicação basta abrir o terminal dentro da pasta do projeto e executar o código abaixo:
 
@@ -66,14 +65,14 @@ npm start
 <br>
 <br>
 
-> ## Observação:
+> ## Observação
 
 A versão NodeJs utilizada para desenvolvimento é a 14.x LTS, logo é necessário intalação de versão igual ou superior para a perfeita execução da mesma.
 
 <br>
 <br>
 
-> ## Banco de dados:
+> ## Banco de dados
 
 Para construir a API foi necessário a modelagem e construção de um banco de dados. Para isso, utilizamos o site <a href = ' https://dbdiagram.io/home'> DBDiagram </a>  para modelagem de cada entidade e seus respectivos atributos, ilustrado na imagem abaixo.
 
@@ -86,7 +85,7 @@ As entidades que escolhemos foram Docentes, Alunos, Cursos, Turmas e Boletins, e
 <br>
 <br>
 
-> ## Rotas da api:
+> ## Rotas da api
 
 Cada entidade representa uma rota em nossa API. Sendo assim, as rotas disponíveis são:
  
@@ -312,7 +311,7 @@ Utilizar o método HTTP Delete no caminho <b>"url da api" + /boletins/:id</b>.
 <br>
 
 
-> ## Autores:
+> ## Autores
 - [Caíque Araújo](https://www.linkedin.com/in/caique-araujo-267b36163/)
 - [Hadassa Moraes](https://www.linkedin.com/in/hadassa-moraes-5a6712230/)
 - [Hadonias Barbosa](https://www.linkedin.com/in/hadonias-leite-barbosa-5b6b31219/)
