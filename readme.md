@@ -149,12 +149,12 @@ Especificações dos campos:
 
 
 ### Alterar um aluno já existente:
-Utilizar o método HTTP Put no caminho <b>"url da api" + /alunos/:cpf</b> passando novamente todos os campos presentes na entidade Alunos, da mesma forma que o método anterior para adicionar um aluno, mas inserindo as modificações desejadas no corpo da requisição.
+Utilizar o método HTTP Put no caminho <b>"url da api" + /alunos/cpf</b> passando novamente todos os campos presentes na entidade Alunos, da mesma forma que o método anterior para adicionar um aluno, mas inserindo as modificações desejadas no corpo da requisição.
 <br>
 
 
 ### Deletar um aluno:
-Utilizar o método HTTP Delete no caminho <b>"url da api" + /alunos/:cpf</b>.
+Utilizar o método HTTP Delete no caminho <b>"url da api" + /alunos/cpf</b>.
 
 <br>
 <br>
@@ -197,7 +197,7 @@ Utilizar o método HTTP Put no caminho <b>"url da api" + /docentes/:cpf</b> pass
 
 ### Deletar um docente:
 
-Utilizar o método HTTP Delete no caminho <b>"url da api" + /docentes/:cpf</b>.
+Utilizar o método HTTP Delete no caminho <b>"url da api" + /docentes/cpf</b>.
 
 <br>
 <br>
@@ -232,13 +232,13 @@ Especificações dos campos:
 
 ### Alterar um curso já existente:
 
-Utilizar o método HTTP Put no caminho <b>"url da api" + /cursos/:nome</b> passando novamente <em>todos</em> os campos presentes na entidade Cursos, da mesma forma que o método anterior para adicionar um curso, mas inserindo as modificações desejadas no corpo da requisição.
+Utilizar o método HTTP Put no caminho <b>"url da api" + /cursos/nome</b> passando novamente <em>todos</em> os campos presentes na entidade Cursos, da mesma forma que o método anterior para adicionar um curso, mas inserindo as modificações desejadas no corpo da requisição.
 <br>
 
 
 ### Deletar um curso:
 
-Utilizar o método HTTP Delete no caminho <b>"url da api" + /cursos/:nome</b>.
+Utilizar o método HTTP Delete no caminho <b>"url da api" + /cursos/nome</b>.
 
 <br>
 <br>
@@ -276,13 +276,13 @@ Especificações dos campos:
 
 ### Alterar uma turma já existente:
 
-Utilizar o método HTTP Put no caminho <b>"url da api" + /turmas/:nome</b> passando novamente <em>todos</em> os campos presentes na entidade Turmas, da mesma forma que o método anterior para adicionar uma turma, mas inserindo as modificações desejadas no corpo da requisição.
+Utilizar o método HTTP Put no caminho <b>"url da api" + /turmas/nome</b> passando novamente <em>todos</em> os campos presentes na entidade Turmas, da mesma forma que o método anterior para adicionar uma turma, mas inserindo as modificações desejadas no corpo da requisição.
 <br>
 
 
 ### Deletar uma turma:
 
-Utilizar o método HTTP Delete no caminho <b>"url da api" + /turmas/:nome</b>.
+Utilizar o método HTTP Delete no caminho <b>"url da api" + /turmas/nome</b>.
 
 <br>
 <br>
@@ -322,13 +322,13 @@ Especificações dos campos:
 
 ### Alterar um boletim já existente:
 
-Utilizar o método HTTP Put no caminho <b>"url da api" + /boletins/:id</b> passando novamente <em>todos</em> os campos presentes na entidade Turmas, da mesma forma que o método anterior para adicionar uma turma, mas inserindo as modificações desejadas no corpo da requisição.
+Utilizar o método HTTP Put no caminho <b>"url da api" + /boletins/id</b> passando novamente <em>todos</em> os campos presentes na entidade Turmas, da mesma forma que o método anterior para adicionar uma turma, mas inserindo as modificações desejadas no corpo da requisição.
 <br>
 
 
 ### Deletar um boletim:
 
-Utilizar o método HTTP Delete no caminho <b>"url da api" + /boletins/:id</b>.
+Utilizar o método HTTP Delete no caminho <b>"url da api" + /boletins/id</b>.
 
 <br>
 <br>
