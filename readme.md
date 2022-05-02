@@ -2,7 +2,7 @@
 
 > ## Descrição da aplicação
 
-A aplicação é uma API no padrão REST que gerencia e automatiza um banco de dados de uma escola. Para isso foi utilizado o banco de dados relacional SQLite. Foi utilização o padrão MVC e o padrão DAO na construção do projeto.
+A aplicação é uma API no padrão REST que gerencia e automatiza um banco de dados de uma escola. Para isso, foi utilizado o banco de dados relacional SQLite, o padrão MVC e o padrão DAO na construção do projeto.
 
 
 <br>
@@ -10,7 +10,7 @@ A aplicação é uma API no padrão REST que gerencia e automatiza um banco de d
 
 > ## Tecnologias utilizadas
 
-Para o desenvolvimento foi utilizado JavaScript com NodeJS, com o framework Express, além do banco de dados relacional SQLite hospedado pela ferramenta de cloud Heroku.
+Para o desenvolvimento da API foi utilizado JavaScript com NodeJS e o framework Express, além do banco de dados relacional SQLite com hospedagem na Heroku.
 
 <br>
 <br>
@@ -27,13 +27,24 @@ Para o desenvolvimento foi utilizado JavaScript com NodeJS, com o framework Expr
     "sqlite3": "^5.0.5"
 }
 ```
-Todas dependências necessárias estão <a href = 'https://github.com/hadmoraes/EscolaAPI/blob/master/package.json'>neste arquivo</a>  no qual
-o trecho acima foi extraído.
-Para fazer um clone do projeto e instalar todas essas dependências necessárias basta copiar o código abaixo usando "Ctrl + c" e em seguida colar no terminal com as telas "Ctrl + Shift + v".
+Todas dependências necessárias estão <a href = 'https://github.com/hadmoraes/EscolaAPI/blob/master/package.json'>neste arquivo</a>. Para fazer um clone do projeto basta copiar o código abaixo usando "Ctrl + c" e em seguida colar no terminal com as telas "Ctrl + Shift + v".
 
 ```
-git clone https://github.com/hadmoraes/ToDoAPI && cd ToDoAPI && npm install cors && npm install dotenv && npm install moment && npm install express && npm install path && npm install sqlite3
+git clone https://github.com/hadmoraes/EscolaAPI
 ```
+
+Em seguida, entre na pasta EscolaAPI utilizando o seguinte comando no terminal:
+
+```
+cd EscolaAPI
+```
+
+E, por fim, instale todas as dependências necessárias:
+
+```
+npm i
+```
+
 
 <br>
 <br>
@@ -45,10 +56,10 @@ git clone https://github.com/hadmoraes/ToDoAPI && cd ToDoAPI && npm install cors
     "jest": "^28.0.2"
   }
 ```
-Essas são as dependencias necessárias apenas para o ambiente de desenvolvimento da aplicação, caso deseje instalar utilize os comandos abaixo em seu terminal logo após o comando das dependências obrigatórias.
+Essas são as dependências necessárias apenas para o ambiente de desenvolvimento da aplicação, caso deseje instalar utilize os comandos abaixo em seu terminal logo após o comando das dependências obrigatórias.
 
 ```
-npm install jest
+npm i jest
 ```
 
 <br>
@@ -65,22 +76,34 @@ npm start
 <br>
 <br>
 
+
+> ## Testes Unitários
+
+Para rodar os testes das validações da aplicação, basta abrir o terminal dentro da pasta do projeto e executar o código abaixo:
+
+```
+npm run test
+```
+
+<br>
+<br>
+
 > ## Observação
 
-A versão NodeJs utilizada para desenvolvimento é a 14.x LTS, logo é necessário intalação de versão igual ou superior para a perfeita execução da mesma.
+A versão NodeJs utilizada para desenvolvimento é a 16.14.2, logo é necessário intalação de versão igual ou superior para a perfeita execução da mesma.
 
 <br>
 <br>
 
 > ## Banco de dados
 
-Para construir a API foi necessário a modelagem e construção de um banco de dados. Para isso, utilizamos o site <a href = ' https://dbdiagram.io/home'> DBDiagram </a>  para modelagem de cada entidade e seus respectivos atributos, ilustrado na imagem abaixo.
+Para construir a API foi necessária a modelagem e construção de um banco de dados. Para isso, utilizamos o site <a href = ' https://dbdiagram.io/home'> DBDiagram </a>  para modelagem de cada entidade e seus respectivos atributos, ilustrados na imagem abaixo.
 
 <img src= ./assets/EscolaAPIDB.png width=900>
 
 <br>
 
-As entidades que escolhemos foram Docentes, Alunos, Cursos, Turmas e Boletins, em que cada  uma contém uma chave primária única. No caso dos Docentes e Alunos, as chaves primárias são seus respectivos CPFs. Já para Cursos, que se refere à série, o nome do curso já especifica unicamente essa entidade, como por exemplo, sexto ano do ensino fundamental. De forma semelhante, a entidade Turmas também tem como nome um código que já especifica unicamente aquela turma, por exemplo, 601 para a primeira turma do sexto ano, 802 para a segunda turma do oitavo ano, etc. Por fim, a entidade Boletins é identificada através do seu id.
+As entidades que escolhemos foram Docentes, Alunos, Cursos, Turmas e Boletins, em que cada uma contém uma chave primária única. No caso dos Docentes e Alunos, as chaves primárias são seus respectivos CPFs. Já para Cursos, que se refere à série, o nome do curso já especifica unicamente essa entidade, como por exemplo, sexto ano do ensino fundamental. De forma semelhante, a entidade Turmas também tem como nome um código que já especifica unicamente aquela turma, por exemplo, 601 para a primeira turma do sexto ano, 802 para a segunda turma do oitavo ano, etc. Por fim, a entidade Boletins é identificada através do seu id.
 
 <br>
 <br>
@@ -113,7 +136,7 @@ Utilizar o método HTTP Get no caminho <b>"url da api" + /alunos/cpf</b>
 
 ### Adicionar aluno:
 
-Utilizar o método HTTP Post no caminho <b>"url da api" + /alunos</b>. No corpo da requisição é necessário inserir dados para todos os atributos dessa entidade. Nesse caso são os seguintes campos <em>cpf, nome, email, telefone, data_de_nascimento.</em>
+Utilizar o método HTTP Post no caminho <b>"url da api" + /alunos</b>. No corpo da requisição é necessário inserir dados para todos os atributos dessa entidade. Nesse caso são os seguintes campos <em>cpf, nome, email, telefone, data_nascimento.</em>
 
 Especificações dos campos:
 
@@ -126,7 +149,7 @@ Especificações dos campos:
 
 
 ### Alterar um aluno já existente:
-Utilizar o método HTTP Put no caminho <b>"url da api" + /alunos/:cpf</b> passando novamente todos os campos presentes na entidade Alunos, da mesma forma que o método anterior para adicionar um aluno, mas inserindo as modificações desejadas.
+Utilizar o método HTTP Put no caminho <b>"url da api" + /alunos/:cpf</b> passando novamente todos os campos presentes na entidade Alunos, da mesma forma que o método anterior para adicionar um aluno, mas inserindo as modificações desejadas no corpo da requisição.
 <br>
 
 
@@ -168,7 +191,7 @@ Especificações dos campos:
 
 ### Alterar um docente já existente:
 
-Utilizar o método HTTP Put no caminho <b>"url da api" + /docentes/:cpf</b> passando novamente <em>todos</em> os campos presentes na entidade Docentes, da mesma forma que o método anterior para adicionar um docente, mas inserindo as modificações desejadas.
+Utilizar o método HTTP Put no caminho <b>"url da api" + /docentes/:cpf</b> passando novamente <em>todos</em> os campos presentes na entidade Docentes, da mesma forma que o método anterior para adicionar um docente, mas inserindo as modificações desejadas no corpo da requisição.
 <br>
 
 
@@ -209,7 +232,7 @@ Especificações dos campos:
 
 ### Alterar um curso já existente:
 
-Utilizar o método HTTP Put no caminho <b>"url da api" + /cursos/:nome</b> passando novamente <em>todos</em> os campos presentes na entidade Cursos, da mesma forma que o método anterior para adicionar um curso, mas inserindo as modificações desejadas.
+Utilizar o método HTTP Put no caminho <b>"url da api" + /cursos/:nome</b> passando novamente <em>todos</em> os campos presentes na entidade Cursos, da mesma forma que o método anterior para adicionar um curso, mas inserindo as modificações desejadas no corpo da requisição.
 <br>
 
 
@@ -253,7 +276,7 @@ Especificações dos campos:
 
 ### Alterar uma turma já existente:
 
-Utilizar o método HTTP Put no caminho <b>"url da api" + /turmas/:nome</b> passando novamente <em>todos</em> os campos presentes na entidade Turmas, da mesma forma que o método anterior para adicionar uma turma, mas inserindo as modificações desejadas.
+Utilizar o método HTTP Put no caminho <b>"url da api" + /turmas/:nome</b> passando novamente <em>todos</em> os campos presentes na entidade Turmas, da mesma forma que o método anterior para adicionar uma turma, mas inserindo as modificações desejadas no corpo da requisição.
 <br>
 
 
@@ -299,7 +322,7 @@ Especificações dos campos:
 
 ### Alterar um boletim já existente:
 
-Utilizar o método HTTP Put no caminho <b>"url da api" + /boletins/:id</b> passando novamente <em>todos</em> os campos presentes na entidade Turmas, da mesma forma que o método anterior para adicionar uma turma, mas inserindo as modificações desejadas.
+Utilizar o método HTTP Put no caminho <b>"url da api" + /boletins/:id</b> passando novamente <em>todos</em> os campos presentes na entidade Turmas, da mesma forma que o método anterior para adicionar uma turma, mas inserindo as modificações desejadas no corpo da requisição.
 <br>
 
 
