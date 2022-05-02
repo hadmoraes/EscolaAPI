@@ -1,6 +1,6 @@
 import Validacoes from "../services/Validacoes.js";
 import AlunoModel from "../model/AlunoModel.js";
-import DatabaseMetodos from "../DAO/DatabaseMetodos.js";
+import DatabaseMetodosAlunos from "../DAO/DatabaseMetodosAlunos.js";
 
 
 class Alunos{
@@ -9,7 +9,7 @@ class Alunos{
 
         app.get("/alunos", async (req, res)=>{
             try {
-                const response = await DatabaseMetodos.listarTodos(req);
+                const response = await DatabaseMetodosAlunos.listarTodos(req);
                 res.status(200).json(response);
             } catch (error) {
                 res.status(400).json({erro: error.message})
@@ -19,7 +19,7 @@ class Alunos{
         app.get("/aluno/:cpf", async(req,res)=>{
             try {
                 const cpf = req.params.cpf;
-                const response = await DatabaseMetodos.listaPorCpf(cpf);
+                const response = await DatabaseMetodosAlunos.listaPorCpf(cpf);
                 res.status(200).json(response);
             } catch (error) {
                 res.status(400).json({erro: error.message})
@@ -28,9 +28,9 @@ class Alunos{
 
         app.post("/aluno", async (req,res)=>{
             try {
-                if(Validacoes.validaNome(req.body.nome) && Validacoes.validaEmail(req.body.email)){
+                if(Validacoes.validaNome(req.body.nome) && Validacoes.validaEmail(req.body.email) && Validacoes.validaCPF(req.body.cpf) && Validacoes.validaTelefone(req.body.telefone) && Validacoes.validaData(req.body.data_nascimento)){
                     const aluno = new AlunoModel(...Object.values(req.body));
-                    const response = await DatabaseMetodos.popular(aluno);
+                    const response = await DatabaseMetodosAlunos.popular(aluno);
                     res.status(201).json(response);
                 }else{
                     throw new Error("A requisição está fora dos padrões, favor rever")
@@ -44,10 +44,10 @@ class Alunos{
 
         app.put("/alunos/:cpf", async (req,res)=>{
             try {
-                if(Validacoes.validaNome(req.body.nome) && Validacoes.validaEmail(req.body.email)){
+                if(Validacoes.validaNome(req.body.nome) && Validacoes.validaEmail(req.body.email) && Validacoes.validaCPF(req.body.cpf) && Validacoes.validaTelefone(req.body.telefone) && Validacoes.validaData(req.body.data_nascimento)){
                     const cpf = req.params.cpf;
                     const aluno = new AlunoModel(...Object.values(req.body));
-                    const response = await DatabaseMetodos.alteraPorCpf(cpf,aluno);
+                    const response = await DatabaseMetodosAlunos.alteraPorCpf(cpf,aluno);
                     res.status(200).json(response)                    
                 }else{
                     throw new Error("A requisição está fora dos padrões, favor rever")
@@ -61,7 +61,7 @@ class Alunos{
         app.delete("/alunos/:cpf", async (req,res)=>{
             try {
                 const cpf = req.params.cpf;
-                const response = await DatabaseMetodos.deletarPorCpf(cpf);
+                const response = await DatabaseMetodosAlunos.deletarPorCpf(cpf);
                 res.status(200).json(response)
             } catch (error) {
                 res.status(400).json({erro: error.message})

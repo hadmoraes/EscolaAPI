@@ -1,6 +1,6 @@
 import Database from "../infra/Database.js";
 
-class DatabaseMetodos{
+class DatabaseMetodosAlunos{
 
     static createTable(){
         const tabela_alunos = `
@@ -52,7 +52,7 @@ class DatabaseMetodos{
         })
     }
 
-// no nosso projeto sera por cpf e nao por id!!!
+
     static listaPorCpf(cpf){
         const query = "SELECT * FROM alunos WHERE id = ?";
         return new Promise((resolve, reject) => {
@@ -101,4 +101,4 @@ class DatabaseMetodos{
 
 }
 
-export default DatabaseMetodos;
+export default DatabaseMetodosAlunos;
