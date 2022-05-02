@@ -1,7 +1,6 @@
-import Cursos from "../controller/Cursos.js";
 import Database from "../infra/Database.js";
 
-class DatabaseMetodosCurso{
+class DatabaseMetodosCursos{
 
     static createTable(){
         const tabela_cursos = `
@@ -17,7 +16,7 @@ class DatabaseMetodosCurso{
                 if (error){
                     reject(error.message)
                 } else{
-                    resolve("Tabela cursos criada com sucesso")
+                    resolve("tabela cursos criada com sucesso")
                 }
             })
         })
@@ -32,7 +31,7 @@ class DatabaseMetodosCurso{
                 if (error){
                     reject(e)
                 } else{
-                    resolve ({message: "Curso criado com sucesso"})
+                    resolve ({message: "curso criado com sucesso"})
                 }
             } )
         })
@@ -51,7 +50,6 @@ class DatabaseMetodosCurso{
         })
     }
 
-// no nosso projeto sera por cpf e nao por id!!!
     static listaPorNome(nome){
         const query = "SELECT * FROM cursos WHERE nome = ?";
         return new Promise((resolve, reject) => {
@@ -75,7 +73,7 @@ class DatabaseMetodosCurso{
                 if(error){
                     reject(error.message)
                 }else{
-                    resolve({message: "Curso alterado com sucesso"})
+                    resolve({message: "curso alterado com sucesso"})
                 }
             })
         }
@@ -90,7 +88,7 @@ class DatabaseMetodosCurso{
                 if(error){
                     reject(error.message)
                 }else{
-                    resolve({message: "Curso deletado com sucesso"})
+                    resolve({message: "curso deletado com sucesso"})
                 }
             })
         }
@@ -100,5 +98,5 @@ class DatabaseMetodosCurso{
 
 }
 
-export default DatabaseMetodosCurso;
+export default DatabaseMetodosCursos;
 
