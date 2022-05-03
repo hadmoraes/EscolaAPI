@@ -1,4 +1,5 @@
 import Database from "../infra/Database.js";
+import moment from "moment";
 
 class DatabaseMetodosAlunos{
 
@@ -26,6 +27,8 @@ class DatabaseMetodosAlunos{
 
     static popular(aluno){
         const query = `INSERT INTO alunos VALUES (?, ?, ?, ?, ?)`;
+        const dataNascimento = moment(aluno["data_nascimento"], 'DD/MM/YYYY').format('YYYY-MM-DD');
+        aluno["data_nascimento"] = dataNascimento;
         const body = Object.values(aluno);
 
         return new Promise((resolve, reject) =>{
@@ -54,7 +57,7 @@ class DatabaseMetodosAlunos{
 
 
     static listaPorCpf(cpf){
-        const query = "SELECT * FROM alunos WHERE id = ?";
+        const query = "SELECT * FROM alunos WHERE cpf = ?";
         return new Promise((resolve, reject) => {
             Database.get(query, cpf, (error, result)=>{
                 if(error){
@@ -70,6 +73,8 @@ class DatabaseMetodosAlunos{
 
     static alteraPorCpf(cpf,aluno){
         const query = "UPDATE alunos SET (cpf, nome, email, telefone, data_nascimento) = (?, ?, ?, ?, ?) WHERE cpf=?";
+        const dataNascimento = moment(aluno["data_nascimento"], 'DD/MM/YYYY').format('YYYY-MM-DD');
+        aluno["data_nascimento"] = dataNascimento;
         const body = Object.values(aluno);
         return new Promise ( (resolve, reject) =>{
             Database.run(query, [...body, cpf], (error, result)=>{
