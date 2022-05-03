@@ -42,6 +42,7 @@ class DatabaseMetodosBoletins{
 
     static popular(boletim){
         const query = `INSERT INTO boletins VALUES (?, ?, ?, ?, ?, ?)`;
+        boletim["nota"] = parseFloat(boletim["nota"]).toFixed(1);    
         const body = Object.values(boletim);
 
         return new Promise((resolve, reject) =>{
@@ -85,7 +86,9 @@ class DatabaseMetodosBoletins{
 
     static alteraPorId(id,boletim){
         const query = "UPDATE boletins SET (id, docente_cpf, aluno_cpf, turma_nome, disciplina, nota) = (?, ?, ?, ?, ?, ?) WHERE id=?";
+        boletim["nota"] = parseFloat(boletim["nota"]).toFixed(1); 
         const body = Object.values(boletim);
+        
         return new Promise ( (resolve, reject) =>{
             Database.run(query, [...body, id], (error)=>{
                 if(error){
