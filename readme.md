@@ -144,7 +144,7 @@ Especificações dos campos:
 - <strong> nome </strong>: deve conter no mínimo 3 caracteres e ser inserido entre aspas duplas
 - <strong> email </strong>: deve ser inserido um email válido entre aspas duplas
 - <strong> telefone </strong>: deve ser inserido 11 dígitos, DDD seguido do número, sem quaiquer tipo de separação e entre aspas duplas
-- <strong> dataNascimento </strong>: deve seguir o padrão DD/MM/AAAA
+- <strong> data_nascimento </strong>: deve seguir o padrão DD/MM/AAAA
 <br>
 
 
@@ -214,11 +214,11 @@ Utilizar o método HTTP Get no caminho <b>"url da api" + /cursos</b>
 
 ### Buscar curso por nome:
 
-Utilizar o método HTTP Get no caminho <b>"url da api" + /curso/nome</b>
+Utilizar o método HTTP Get no caminho <b>"url da api" + /cursos/nome</b>
 <br>
 
 
-### Adicionar curso:
+### Adicionar um curso:
 
 Utilizar o método HTTP Post no caminho <b>"url da api" + /cursos</b>. No corpo da requisição é necessário inserir dados para todos os atributos dessa entidade. Nesse caso são os seguintes campos <em> nome, carga_horaria, preco.</em>
 
@@ -258,9 +258,9 @@ Utilizar o método HTTP Get no caminho <b>"url da api" + /turmas/nome</b>
 <br>
 
 
-### Adicionar turma:
+### Adicionar uma turma:
 
-Utilizar o método HTTP Post no caminho <b>"url da api" + /turma</b>. No corpo da requisição é necessário inserir dados para todos os atributos dessa entidade. Nesse caso são os seguintes campos <em> nome, curso_nome, data_inicio, data_final, turno.</em>
+Utilizar o método HTTP Post no caminho <b>"url da api" + /turmas</b>. No corpo da requisição é necessário inserir dados para todos os atributos dessa entidade. Nesse caso são os seguintes campos <em> nome, curso_nome, data_inicio, data_final, turno.</em>
 
 Especificações dos campos:
 
@@ -302,7 +302,7 @@ Utilizar o método HTTP Get no caminho <b>"url da api" + /boletins/id</b>
 <br>
 
 
-### Adicionar boletim:
+### Adicionar um boletim:
 
 Utilizar o método HTTP Post no caminho <b>"url da api" + /boletins</b>. No corpo da requisição é necessário inserir dados para todos os atributos dessa entidade. Nesse caso são os seguintes campos <em> id, docente_cpf, aluno_cpf, turma_nome, disciplina, nota.</em>
 
