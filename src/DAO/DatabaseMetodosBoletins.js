@@ -13,7 +13,7 @@ class DatabaseMetodosBoletins{
         })
     }
 
-    static createBoletins(){
+    static createTable(){
         this.activePragma();
         const tabela_boletins = `
         CREATE TABLE IF NOT EXISTS turmas (

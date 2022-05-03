@@ -13,7 +13,7 @@ class DatabaseMetodosTurmas{
         })
     }
 
-    static createTurmas(){
+    static createTable(){
         this.activePragma();
         const tabela_turmas = `
         CREATE TABLE IF NOT EXISTS turmas (
@@ -22,7 +22,7 @@ class DatabaseMetodosTurmas{
             data_inicio DATE,
             data_final DATE,
             turno VARCHAR,
-        FOREIGN KEY (curso_nome) REFERENCES tabela_cursos(nome)
+        FOREIGN KEY (curso_nome) REFERENCES cursos(nome)
           )
           `
           
