@@ -16,7 +16,7 @@ class DatabaseMetodosBoletins{
     static createTable(){
         this.activePragma();
         const tabela_boletins = `
-        CREATE TABLE IF NOT EXISTS turmas (
+        CREATE TABLE IF NOT EXISTS boletins (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             docente_cpf VARCHAR,
             aluno_cpf VARCHAR,
@@ -41,7 +41,7 @@ class DatabaseMetodosBoletins{
     }
 
     static popular(boletim){
-        const query = `INSERT INTO turmas VALUES (?, ?, ?, ?, ?, ?)`;
+        const query = `INSERT INTO boletins VALUES (?, ?, ?, ?, ?, ?)`;
         const body = Object.values(boletim);
 
         return new Promise((resolve, reject) =>{
@@ -56,7 +56,7 @@ class DatabaseMetodosBoletins{
     }
 
     static listarTodos(){
-        const query = "SELECT * FROM turmas";
+        const query = "SELECT * FROM boletins";
         return new Promise((resolve, reject) =>{
             Database.all(query, (error, result)=>{
                 if(error){
@@ -69,7 +69,7 @@ class DatabaseMetodosBoletins{
     }
 
     static listaPorId(id){
-        const query = "SELECT * FROM turmas WHERE id = ?";
+        const query = "SELECT * FROM boletins WHERE id = ?";
         return new Promise((resolve, reject) => {
             Database.get(query, id, (error, result)=>{
                 if(error){
@@ -84,7 +84,7 @@ class DatabaseMetodosBoletins{
     }
 
     static alteraPorId(id,boletim){
-        const query = "UPDATE turmas SET (id, docente_cpf, aluno_cpf, turma_nome, disciplina, nota) = (?, ?, ?, ?, ?, ?) WHERE id=?";
+        const query = "UPDATE boletins SET (id, docente_cpf, aluno_cpf, turma_nome, disciplina, nota) = (?, ?, ?, ?, ?, ?) WHERE id=?";
         const body = Object.values(boletim);
         return new Promise ( (resolve, reject) =>{
             Database.run(query, [...body, id], (error)=>{
@@ -100,7 +100,7 @@ class DatabaseMetodosBoletins{
     }
 
     static deletaPorId(id){
-        const query = "DELETE FROM turmas WHERE id=?";
+        const query = "DELETE FROM boletins WHERE id=?";
         return new Promise((resolve, reject)=>{
             Database.run(query, id, (error)=>{
                 if(error){
