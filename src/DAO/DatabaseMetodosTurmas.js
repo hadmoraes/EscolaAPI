@@ -50,7 +50,7 @@ class DatabaseMetodosTurmas{
         return new Promise((resolve, reject) =>{
             Database.run(query, [...body], (error) =>{
                 if (error){
-                    reject(e)
+                    reject(error)
                 } else{
                     resolve ({message: "turma criada com sucesso"})
                 }
