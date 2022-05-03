@@ -24,6 +24,8 @@ class DatabaseMetodosCursos{
 
     static popular(curso){
         const query = `INSERT INTO cursos VALUES (?, ?, ?)`;
+        curso["carga_horaria"] = Math.round(curso["carga_horaria"]);
+        curso["preco"] = parseFloat(curso["preco"]).toFixed(2);
         const body = Object.values(curso);
 
         return new Promise((resolve, reject) =>{
@@ -67,6 +69,8 @@ class DatabaseMetodosCursos{
 
     static alteraPorNome(nome,curso){
         const query = "UPDATE cursos SET (nome,carga_horaria, preco) = ( ?, ?, ?) WHERE nome=?";
+        curso["carga_horaria"] = Math.round(curso["carga_horaria"]);
+        curso["preco"] = parseFloat(curso["preco"]).toFixed(2);
         const body = Object.values(curso);
         return new Promise ( (resolve, reject) =>{
             Database.run(query, [...body, nome], (error, result)=>{
