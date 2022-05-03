@@ -1,5 +1,5 @@
 import DocenteModel from "../model/DocenteModel.js";
-import DatabaseMetodos from "../DAO/DatabaseMetodos.js";
+import DatabaseMetodosDocentes from "../DAO/DatabaseMetodosDocentes.js";
 import Validacoes from "../services/Validacoes.js";
 
 
@@ -9,7 +9,7 @@ class Docentes{
 
         app.get("/docentes", async (req, res)=>{
             try {
-                const response = await DatabaseMetodos.listarTodos();
+                const response = await DatabaseMetodosDocentes.listarTodos();
                 res.status(200).json(response);
             } catch (error) {
                 res.status(400).json({erro: error.message})
@@ -19,7 +19,7 @@ class Docentes{
         app.get("/docentes/:cpf", async(req,res)=>{
             try {
                 const cpf = req.params.cpf;
-                const response = await DatabaseMetodos.listaPorCpf(cpf);
+                const response = await DatabaseMetodosDocentes.listaPorCpf(cpf);
                 res.status(200).json(response);
             } catch (error) {
                 res.status(400).json({erro: error.message})
@@ -30,10 +30,10 @@ class Docentes{
             try {
                 if(Validacoes.validaNome(req.body.nome) && Validacoes.validaEmail(req.body.email)){
                     const docente = new DocenteModel(...Object.values(req.body));
-                    const response = await DatabaseMetodos.popular(docente);
+                    const response = await DatabaseMetodosDocentes.popular(docente);
                     res.status(201).json(response);
                 }else{
-                    throw new Error("A requisição está fora dos padrões, favor rever")
+                    throw new Error("A requisição está fora dos padrões, favor ver documentação")
                 }
 
             } catch (error) {
@@ -46,10 +46,10 @@ class Docentes{
                 if(Validacoes.validaNome(req.body.nome) && Validacoes.validaEmail(req.body.email)){
                     const cpf = req.params.cpf;
                     const docente = new DocenteModel(...Object.values(req.body));
-                    const response = await DatabaseMetodos.alteraPorCpf(cpf,docente);
+                    const response = await DatabaseMetodosDocentes.alteraPorCpf(cpf,docente);
                     res.status(200).json(response)                    
                 }else{
-                    throw new Error("A requisição está fora dos padrões, favor rever")
+                    throw new Error("A requisição está fora dos padrões, favor ver documentação")
                 }
 
             } catch (error) {
@@ -60,7 +60,7 @@ class Docentes{
         app.delete("/docentes/:cpf", async (req,res)=>{
             try {
                 const cpf = req.params.cpf;
-                const response = await DatabaseMetodos.deletaPorCpf(cpf);
+                const response = await DatabaseMetodosDocentes.deletaPorCpf(cpf);
                 res.status(200).json(response)
             } catch (error) {
                 res.status(400).json({erro: error.message})

@@ -1,6 +1,6 @@
 import Database from "../infra/Database.js";
 
-class DatabaseMetodos{
+class DatabaseMetodosDocentes{
 
     static createTable(){
         const tabela_docentes = `
@@ -103,4 +103,4 @@ class DatabaseMetodos{
 
 }
 
-export default DatabaseMetodos;
+export default DatabaseMetodosDocentes;
