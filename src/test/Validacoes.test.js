@@ -43,15 +43,15 @@ test("Verifica se o email contem @", ()=>{
  */
 
 test("Verifica se o cpf é valido", ()=>{
-    expect(Validacoes.validaCPF('01234567891')).toBe(true)
+    expect(Validacoes.validaCpf('01234567891')).toBe(true)
 })
 
 test("Verifica se o cpf contem pelo menos 11 digitos", ()=>{
-    expect(Validacoes.validaCPF('0123456789')).toBe(false)
+    expect(Validacoes.validaCpf('0123456789')).toBe(false)
 })
 
 test("Verifica se o cpf aceita . ou -", ()=>{
-    expect(Validacoes.validaCPF('012.345.678-91')).toBe(true)
+    expect(Validacoes.validaCpf('012.345.678-91')).toBe(true)
 })
 
 /**

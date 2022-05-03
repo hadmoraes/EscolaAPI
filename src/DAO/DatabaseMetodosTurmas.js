@@ -1,4 +1,5 @@
 import Database from "../infra/Database.js";
+import moment from "moment";
 
 class DatabaseMetodosTurmas{
 
@@ -40,6 +41,10 @@ class DatabaseMetodosTurmas{
 
     static popular(turma){
         const query = `INSERT INTO turmas VALUES (?, ?, ?, ?, ?)`;
+        const dataInicio = moment(turma["data_inicio"], 'DD/MM/YYYY').format('YYYY-MM-DD');
+        const dataFinal = moment(turma["data_final"], 'DD/MM/YYYY').format('YYYY-MM-DD');
+        turma["data_inicio"] = dataInicio;
+        turma["data_final"] = dataFinal;
         const body = Object.values(turma);
 
         return new Promise((resolve, reject) =>{
@@ -83,6 +88,10 @@ class DatabaseMetodosTurmas{
 
     static alteraPorNome(nome,turma){
         const query = "UPDATE turmas SET (nome, curso_nome, data_inicio, data_final, turno) = (?, ?, ?, ?, ?) WHERE nome=?";
+        const dataInicio = moment(turma["data_inicio"], 'DD/MM/YYYY').format('YYYY-MM-DD');
+        const dataFinal = moment(turma["data_final"], 'DD/MM/YYYY').format('YYYY-MM-DD');
+        turma["data_inicio"] = dataInicio;
+        turma["data_final"] = dataFinal;        
         const body = Object.values(turma);
         return new Promise ( (resolve, reject) =>{
             Database.run(query, [...body, nome], (error, result)=>{

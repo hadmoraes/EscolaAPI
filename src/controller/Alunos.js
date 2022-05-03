@@ -16,7 +16,7 @@ class Alunos{
             }
         });
 
-        app.get("/aluno/:cpf", async(req,res)=>{
+        app.get("/alunos/:cpf", async(req,res)=>{
             try {
                 const cpf = req.params.cpf;
                 const response = await DatabaseMetodosAlunos.listaPorCpf(cpf);
@@ -26,9 +26,9 @@ class Alunos{
             }
         });
 
-        app.post("/aluno", async (req,res)=>{
+        app.post("/alunos", async (req,res)=>{
             try {
-                if(Validacoes.validaNome(req.body.nome) && Validacoes.validaEmail(req.body.email) && Validacoes.validaCPF(req.body.cpf) && Validacoes.validaTelefone(req.body.telefone) && Validacoes.validaData(req.body.data_nascimento)){
+                if(Validacoes.validaNome(req.body.nome) && Validacoes.validaCpf(req.body.cpf) && Validacoes.validaEmail(req.body.email) && Validacoes.validaTelefone(req.body.telefone) && Validacoes.validaData(req.body.data_nascimento)){
                     const aluno = new AlunoModel(...Object.values(req.body));
                     const response = await DatabaseMetodosAlunos.popular(aluno);
                     res.status(201).json(response);
@@ -37,14 +37,14 @@ class Alunos{
                 }
 
             } catch (error) {
-                /* res.status(400).json({erro: error.message}) */
+                res.status(400).json({erro: error.message})
             }
         });
     
 
         app.put("/alunos/:cpf", async (req,res)=>{
             try {
-                if(Validacoes.validaNome(req.body.nome) && Validacoes.validaEmail(req.body.email) && Validacoes.validaCPF(req.body.cpf) && Validacoes.validaTelefone(req.body.telefone) && Validacoes.validaData(req.body.data_nascimento)){
+                if(Validacoes.validaNome(req.body.nome) && Validacoes.validaCpf(req.body.cpf) && Validacoes.validaEmail(req.body.email) && Validacoes.validaTelefone(req.body.telefone)  && Validacoes.validaData(req.body.data_nascimento)){
                     const cpf = req.params.cpf;
                     const aluno = new AlunoModel(...Object.values(req.body));
                     const response = await DatabaseMetodosAlunos.alteraPorCpf(cpf,aluno);
@@ -61,7 +61,7 @@ class Alunos{
         app.delete("/alunos/:cpf", async (req,res)=>{
             try {
                 const cpf = req.params.cpf;
-                const response = await DatabaseMetodosAlunos.deletarPorCpf(cpf);
+                const response = await DatabaseMetodosAlunos.deletaPorCpf(cpf);
                 res.status(200).json(response)
             } catch (error) {
                 res.status(400).json({erro: error.message})
