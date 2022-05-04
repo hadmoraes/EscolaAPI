@@ -158,7 +158,7 @@ Especificações dos campos:
 
 Na imagem abaixo temos um exemplo de requisição Post na rota alunos utilizando Insomnia:
 
-<img src= ./assets/img/alunos_post.png width=500>
+<img src= ./assets/img/alunos_post.png width=800>
 
 <br>
 
@@ -170,7 +170,7 @@ Insira novamente <em>todos</em> os campos presentes na entidade Alunos, da mesma
 
 Na imagem abaixo temos um exemplo de requisição Put na rota alunos utilizando Insomnia:
 
-<img src= ./assets/img/alunos_put.png width=500>
+<img src= ./assets/img/alunos_put.png width=800>
 <br>
 
 
@@ -212,7 +212,7 @@ Especificações dos campos:
 
 Na imagem abaixo temos um exemplo de requisição Post na rota docentes utilizando Insomnia:
 
-<img src= ./assets/img/docentes_post.png width=500>
+<img src= ./assets/img/docentes_post.png width=800>
 
 <br>
 
@@ -225,7 +225,7 @@ Insira novamente <em>todos</em> os campos presentes na entidade Docentes, da mes
 
 Na imagem abaixo temos um exemplo de requisição Put na rota docentes utilizando Insomnia:
 
-<img src= ./assets/img/docentes_put.png width=500>
+<img src= ./assets/img/docentes_put.png width=800>
 <br>
 
 
@@ -266,7 +266,7 @@ Especificações dos campos:
 
 Na imagem abaixo temos um exemplo de requisição Post na rota cursos utilizando Insomnia:
 
-<img src= ./assets/img/cursos_post.png width=500>
+<img src= ./assets/img/cursos_post.png width=800>
 
 <br>
 
@@ -278,7 +278,7 @@ Insira novamente <em>todos</em> os campos presentes na entidade Cursos, da mesma
 
 Na imagem abaixo temos um exemplo de requisição Put na rota cursos utilizando Insomnia:
 
-<img src= ./assets/img/cursos_put.png width=500>
+<img src= ./assets/img/cursos_put.png width=800>
 <br>
 
 
@@ -322,7 +322,7 @@ Especificações dos campos:
 
 Na imagem abaixo temos um exemplo de requisição Post na rota turmas utilizando Insomnia:
 
-<img src= ./assets/img/turmas_post.png width=500>
+<img src= ./assets/img/turmas_post.png width=800>
 
 <br>
 
@@ -334,7 +334,7 @@ Insira novamente <em>todos</em> os campos presentes na entidade Turmas, da mesma
 
 Na imagem abaixo temos um exemplo de requisição Put na rota turmas utilizando Insomnia:
 
-<img src= ./assets/img/turmas_put.png width=500>
+<img src= ./assets/img/turmas_put.png width=800>
 <br>
 
 
@@ -380,7 +380,7 @@ Especificações dos campos:
 
 Na imagem abaixo temos um exemplo de requisição Post na rota boletins utilizando Insomnia:
 
-<img src= ./assets/img/boletins_post.png width=500>
+<img src= ./assets/img/boletins_post.png width=800>
 
 <br>
 
@@ -392,7 +392,7 @@ Insira novamente <em>todos</em> os campos presentes na entidade Turmas, da mesma
 
 Na imagem abaixo temos um exemplo de requisição Put na rota boletins utilizando Insomnia:
 
-<img src= ./assets/img/boletins_put.png width=500>
+<img src= ./assets/img/boletins_put.png width=800>
 <br>
 
 
