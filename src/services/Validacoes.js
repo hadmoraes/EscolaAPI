@@ -17,6 +17,7 @@ class Validacoes{
     }
 
     static validaCpf(cpf){
+        if (typeof cpf != "string") return false;
         const validacaoCpf = /^([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})$/;
         return (cpf.match(validacaoCpf) != null)
     }
