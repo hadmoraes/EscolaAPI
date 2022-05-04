@@ -99,7 +99,7 @@ A versão NodeJs utilizada para desenvolvimento é a 16.14.2, logo é necessári
 
 Para construir a API foi necessária a modelagem e construção de um banco de dados. Para isso, utilizamos o site <a href = ' https://dbdiagram.io/home'> DBDiagram </a>  para modelagem de cada entidade e seus respectivos atributos, ilustrados na imagem abaixo.
 
-<img src= ./assets/EscolaAPIDB.png width=900>
+<img src= ./assets/img/EscolaAPIDB.png width=900>
 
 <br>
 
@@ -108,7 +108,7 @@ As entidades que escolhemos foram Docentes, Alunos, Cursos, Turmas e Boletins, e
 <br>
 <br>
 
-> ## Rotas da api
+> ## Rotas da API
 
 Cada entidade representa uma rota em nossa API. Sendo assim, as rotas disponíveis são:
  
@@ -118,25 +118,35 @@ Cada entidade representa uma rota em nossa API. Sendo assim, as rotas disponíve
  - "/turmas"
  - "/boletins"
 
+Acesse as rotas através do link <b> http://api--escola.herokuapp.com + /nome da rota </b>
+
+<br>
+
+## Url da API
+
+Estamos utilizando a hospedagem da Heroku, portanto, é possível utilizar o link <b> http://api--escola.herokuapp.com </b> em todas as rotas e métodos.
+
 <br>
 
 ## Alunos
 
 ### Ver todos os alunos:
 
-Utilizar o método HTTP Get no caminho <b>"url da api" + /alunos</b>
+Utilizar o método HTTP Get no caminho: <b>url da api + /alunos</b>
 <br>
 
 
 ### Buscar aluno por cpf:
 
-Utilizar o método HTTP Get no caminho <b>"url da api" + /alunos/cpf</b>
+Utilizar o método HTTP Get no caminho: <b>url da api + /alunos/cpf</b>
 <br>
 
 
 ### Adicionar aluno:
 
-Utilizar o método HTTP Post no caminho <b>"url da api" + /alunos</b>. No corpo da requisição é necessário inserir dados para todos os atributos dessa entidade. Nesse caso são os seguintes campos <em>cpf, nome, email, telefone, data_nascimento.</em>
+Utilizar o método HTTP Post no caminho: <b>url da api + /alunos</b>
+
+No corpo da requisição é necessário inserir dados para todos os atributos dessa entidade. Nesse caso são os seguintes campos <em>cpf, nome, email, telefone, data_nascimento.</em>
 
 Especificações dos campos:
 
@@ -144,17 +154,28 @@ Especificações dos campos:
 - <strong> nome </strong>: deve conter no mínimo 3 caracteres e ser inserido entre aspas duplas
 - <strong> email </strong>: deve ser inserido um email válido entre aspas duplas
 - <strong> telefone </strong>: deve ser inserido 11 dígitos, DDD seguido do número, sem quaiquer tipo de separação e entre aspas duplas
-- <strong> data_nascimento </strong>: deve seguir o padrão DD/MM/AAAA
+- <strong> data_nascimento </strong>: deve seguir o padrão DD/MM/AAAA entre aspas duplas
+
+Na imagem abaixo temos um exemplo de requisição Post na rota alunos utilizando Insomnia:
+
+<img src= ./assets/img/alunos_post.png width=500>
+
 <br>
 
 
 ### Alterar um aluno já existente:
-Utilizar o método HTTP Put no caminho <b>"url da api" + /alunos/cpf</b> passando novamente todos os campos presentes na entidade Alunos, da mesma forma que o método anterior para adicionar um aluno, mas inserindo as modificações desejadas no corpo da requisição.
+Utilizar o método HTTP Put no caminho: <b>url da api + /alunos/cpf</b> 
+
+Insira novamente <em>todos</em> os campos presentes na entidade Alunos, da mesma forma que o método anterior para adicionar um aluno, com as modificações desejadas no corpo da requisição.
+
+Na imagem abaixo temos um exemplo de requisição Put na rota alunos utilizando Insomnia:
+
+<img src= ./assets/img/alunos_put.png width=500>
 <br>
 
 
 ### Deletar um aluno:
-Utilizar o método HTTP Delete no caminho <b>"url da api" + /alunos/cpf</b>.
+Utilizar o método HTTP Delete no caminho: <b>url da api + /alunos/cpf</b>
 
 <br>
 <br>
@@ -164,19 +185,21 @@ Utilizar o método HTTP Delete no caminho <b>"url da api" + /alunos/cpf</b>.
 
 ### Ver todos os docentes:
 
-Utilizar o método HTTP Get no caminho <b>"url da api" + /docentes</b>
+Utilizar o método HTTP Get no caminho: <b>url da api + /docentes</b>
 <br>
 
 
 ### Buscar docente por cpf:
 
-Utilizar o método HTTP Get no caminho <b>"url da api" + /docentes/cpf</b>
+Utilizar o método HTTP Get no caminho: <b>url da api + /docentes/cpf</b>
 <br>
 
 
 ### Adicionar docente:
 
-Utilizar o método HTTP Post no caminho <b>"url da api" + /docentes</b>. No corpo da requisição é necessário inserir dados para todos os atributos dessa entidade. Nesse caso são os seguintes campos <em>cpf, nome, email, telefone, salario, disciplinas.</em>
+Utilizar o método HTTP Post no caminho: <b>url da api + /docentes</b> 
+
+No corpo da requisição é necessário inserir dados para todos os atributos dessa entidade. Nesse caso são os seguintes campos <em>cpf, nome, email, telefone, salario, disciplinas.</em>
 
 Especificações dos campos:
 
@@ -185,19 +208,30 @@ Especificações dos campos:
 - <strong> email </strong>: deve ser inserido um email válido entre aspas duplas
 - <strong> telefone </strong>: deve ser inserido 11 dígitos, DDD seguido do número, sem quaiquer tipo de separação e entre aspas duplas
 - <strong> salario </strong>: deve ser inserido sem aspas duplas e os centavos separados por ponto, por exemplo, <em> 1500.65 </em>
-- <strong> disciplinas </strong>: todas as disciplinas devem ser inseridas separadas por / e entre aspas duplas, por exemplo, <em> "portugues/literatura/ingles" </em> 
+- <strong> disciplinas </strong>: todas as disciplinas devem ser inseridas separadas por / e entre aspas duplas, por exemplo, <em> "português/literatura/inglês" </em> 
+
+Na imagem abaixo temos um exemplo de requisição Post na rota docentes utilizando Insomnia:
+
+<img src= ./assets/img/docentes_post.png width=500>
+
 <br>
 
 
 ### Alterar um docente já existente:
 
-Utilizar o método HTTP Put no caminho <b>"url da api" + /docentes/cpf</b> passando novamente <em>todos</em> os campos presentes na entidade Docentes, da mesma forma que o método anterior para adicionar um docente, mas inserindo as modificações desejadas no corpo da requisição.
+Utilizar o método HTTP Put no caminho: <b>url da api + /docentes/cpf</b> 
+
+Insira novamente <em>todos</em> os campos presentes na entidade Docentes, da mesma forma que o método anterior para adicionar um docente, com as modificações desejadas no corpo da requisição.
+
+Na imagem abaixo temos um exemplo de requisição Put na rota docentes utilizando Insomnia:
+
+<img src= ./assets/img/docentes_put.png width=500>
 <br>
 
 
 ### Deletar um docente:
 
-Utilizar o método HTTP Delete no caminho <b>"url da api" + /docentes/cpf</b>.
+Utilizar o método HTTP Delete no caminho: <b>url da api+ /docentes/cpf</b>
 
 <br>
 <br>
@@ -208,19 +242,21 @@ Utilizar o método HTTP Delete no caminho <b>"url da api" + /docentes/cpf</b>.
 
 ### Ver todos os cursos:
 
-Utilizar o método HTTP Get no caminho <b>"url da api" + /cursos</b>
+Utilizar o método HTTP Get no caminho: <b>url da api + /cursos</b>
 <br>
 
 
 ### Buscar curso por nome:
 
-Utilizar o método HTTP Get no caminho <b>"url da api" + /cursos/nome</b>
+Utilizar o método HTTP Get no caminho: <b>url da api + /cursos/nome</b>
 <br>
 
 
 ### Adicionar um curso:
 
-Utilizar o método HTTP Post no caminho <b>"url da api" + /cursos</b>. No corpo da requisição é necessário inserir dados para todos os atributos dessa entidade. Nesse caso são os seguintes campos <em> nome, carga_horaria, preco.</em>
+Utilizar o método HTTP Post no caminho: <b>url da api + /cursos</b> 
+
+No corpo da requisição é necessário inserir dados para todos os atributos dessa entidade. Nesse caso são os seguintes campos <em> nome, carga_horaria, preco.</em>
 
 Especificações dos campos:
 
@@ -228,17 +264,27 @@ Especificações dos campos:
 - <strong> carga_horaria </strong>: deve ser inserida um número inteiro com a carga horária total em horas de 1 ano letivo para aquela série sem aspas, por exemplo,  <em> 900 </em>
 - <strong> preco </strong>: deve ser inserido o valor da mensalidade sem aspas duplas e os centavos separados por ponto, por exemplo, <em> 530.25 </em>
 
+Na imagem abaixo temos um exemplo de requisição Post na rota cursos utilizando Insomnia:
+
+<img src= ./assets/img/cursos_post.png width=500>
+
 <br>
 
 ### Alterar um curso já existente:
 
-Utilizar o método HTTP Put no caminho <b>"url da api" + /cursos/nome</b> passando novamente <em>todos</em> os campos presentes na entidade Cursos, da mesma forma que o método anterior para adicionar um curso, mas inserindo as modificações desejadas no corpo da requisição.
+Utilizar o método HTTP Put no caminho: <b>url da api + /cursos/nome</b> 
+
+Insira novamente <em>todos</em> os campos presentes na entidade Cursos, da mesma forma que o método anterior para adicionar um curso, com as modificações desejadas no corpo da requisição.
+
+Na imagem abaixo temos um exemplo de requisição Put na rota cursos utilizando Insomnia:
+
+<img src= ./assets/img/cursos_put.png width=500>
 <br>
 
 
 ### Deletar um curso:
 
-Utilizar o método HTTP Delete no caminho <b>"url da api" + /cursos/nome</b>.
+Utilizar o método HTTP Delete no caminho: <b>url da api + /cursos/nome</b>
 
 <br>
 <br>
@@ -248,41 +294,53 @@ Utilizar o método HTTP Delete no caminho <b>"url da api" + /cursos/nome</b>.
 
 ### Ver todos as turmas:
 
-Utilizar o método HTTP Get no caminho <b>"url da api" + /turmas</b>
+Utilizar o método HTTP Get no caminho: <b>url da api + /turmas</b>
 <br>
 
 
 ### Buscar turma por nome:
 
-Utilizar o método HTTP Get no caminho <b>"url da api" + /turmas/nome</b>
+Utilizar o método HTTP Get no caminho: <b>url da api + /turmas/nome</b>
 <br>
 
 
 ### Adicionar uma turma:
 
-Utilizar o método HTTP Post no caminho <b>"url da api" + /turmas</b>. No corpo da requisição é necessário inserir dados para todos os atributos dessa entidade. Nesse caso são os seguintes campos <em> nome, curso_nome, data_inicio, data_final, turno.</em>
+Utilizar o método HTTP Post no caminho: <b>url da api + /turmas</b>
+
+No corpo da requisição é necessário inserir dados para todos os atributos dessa entidade. Nesse caso são os seguintes campos <em> nome, curso_nome, data_inicio, data_final, turno.</em>
 
 Especificações dos campos:
 
 - <strong> nome </strong>: deve conter no mínimo 3 caracteres e ser inserido entre aspas duplas, exemplo, <em> "901" </em>
 - <strong> curso_nome </strong>: se refere ao atributo nome da entidade Cursos e deve conter no mínimo 3 caracteres e ser inserido entre aspas duplas, por exemplo, <em> "nono ano do ensino fundamental" </em> 
-- <strong> data_inicio </strong>: deve seguir o padrão DD/MM/AAAA
-- <strong> data_final </strong>: deve seguir o padrão DD/MM/AAAA
+- <strong> data_inicio </strong>: deve seguir o padrão DD/MM/AAAA com aspas duplas
+- <strong> data_final </strong>: deve seguir o padrão DD/MM/AAAA com aspas duplas
 - <strong> turno </strong>: deve ser inserido com aspas duplas e só são aceitos manhã ou tarde, por exemplo, <em> "manhã" </em>
 
 <b> OBS: </b> todos os campos que fazem referência a um atributo presente em outras entidades devem <em>já existir</em> previamente. Ou seja, não será possível inserir um curso que não exista ainda.
+
+Na imagem abaixo temos um exemplo de requisição Post na rota turmas utilizando Insomnia:
+
+<img src= ./assets/img/turmas_post.png width=500>
 
 <br>
 
 ### Alterar uma turma já existente:
 
-Utilizar o método HTTP Put no caminho <b>"url da api" + /turmas/nome</b> passando novamente <em>todos</em> os campos presentes na entidade Turmas, da mesma forma que o método anterior para adicionar uma turma, mas inserindo as modificações desejadas no corpo da requisição.
+Utilizar o método HTTP Put no caminho: <b>url da api + /turmas/nome</b> 
+
+Insira novamente <em>todos</em> os campos presentes na entidade Turmas, da mesma forma que o método anterior para adicionar uma turma, com as modificações desejadas no corpo da requisição.
+
+Na imagem abaixo temos um exemplo de requisição Put na rota turmas utilizando Insomnia:
+
+<img src= ./assets/img/turmas_put.png width=500>
 <br>
 
 
 ### Deletar uma turma:
 
-Utilizar o método HTTP Delete no caminho <b>"url da api" + /turmas/nome</b>.
+Utilizar o método HTTP Delete no caminho: <b>url da api + /turmas/nome</b>
 
 <br>
 <br>
@@ -292,46 +350,59 @@ Utilizar o método HTTP Delete no caminho <b>"url da api" + /turmas/nome</b>.
 
 ### Ver todos os boletins:
 
-Utilizar o método HTTP Get no caminho <b>"url da api" + /boletins</b>
+Utilizar o método HTTP Get no caminho: <b>url da api + /boletins</b>
 <br>
 
 
 ### Buscar boletim por id:
 
-Utilizar o método HTTP Get no caminho <b>"url da api" + /boletins/id</b>
+Utilizar o método HTTP Get no caminho: <b>url da api + /boletins/id</b>
 <br>
 
 
 ### Adicionar um boletim:
 
-Utilizar o método HTTP Post no caminho <b>"url da api" + /boletins</b>. No corpo da requisição é necessário inserir dados para todos os atributos dessa entidade. Nesse caso são os seguintes campos <em> id, docente_cpf, aluno_cpf, turma_nome, disciplina, nota.</em>
+Utilizar o método HTTP Post no caminho: <b>url da api + /boletins</b>
+
+No corpo da requisição é necessário inserir dados para todos os atributos dessa entidade. Nesse caso são os seguintes campos <em> id, docente_cpf, aluno_cpf, turma_nome, disciplina, nota.</em>
 
 Especificações dos campos:
 
-- <strong> id </strong>:  
+- <strong> id </strong>: número inteiro que identifica o boletim unicamente. Não é permitido repetição de id, por isso confira antes na rota GET se o id já existe previamente.
 - <strong> docente_cpf </strong>: colocar todos os 11 digitos juntos sem quaisquer separação e entre aspas duplas
 - <strong> aluno_cpf </strong>: colocar todos os 11 digitos juntos sem quaisquer separação e entre aspas duplas
 - <strong> turma_nome </strong>: deve conter no mínimo 3 caracteres e ser inserido entre aspas duplas, exemplo, <em> "901" </em>
-- <strong> disciplina </strong>: deve conter no mínimo 3 caracteres e ser inserido entre aspas duplas, exemplo, <em> "matematica" </em>
+- <strong> disciplina </strong>: deve conter no mínimo 3 caracteres e ser inserido entre aspas duplas, exemplo, <em> "matemática" </em>
 - <strong> nota </strong>: deve ser inserido o valor da nota sem aspas duplas e a casa decimal separada por ponto, por exemplo, <em> 8.5 </em>
 
 
 <b> OBS: </b> todos os campos que fazem referência a um atributo presente em outras entidades devem <em>já existir</em> previamente. Ou seja, não será possível inserir um docente, aluno ou turma que não existam ainda.
 
+Na imagem abaixo temos um exemplo de requisição Post na rota boletins utilizando Insomnia:
+
+<img src= ./assets/img/boletins_post.png width=500>
+
 <br>
 
 ### Alterar um boletim já existente:
 
-Utilizar o método HTTP Put no caminho <b>"url da api" + /boletins/id</b> passando novamente <em>todos</em> os campos presentes na entidade Turmas, da mesma forma que o método anterior para adicionar uma turma, mas inserindo as modificações desejadas no corpo da requisição.
+Utilizar o método HTTP Put no caminho: <b>url da api + /boletins/id</b> 
+
+Insira novamente <em>todos</em> os campos presentes na entidade Turmas, da mesma forma que o método anterior para adicionar uma turma, com as modificações desejadas no corpo da requisição.
+
+Na imagem abaixo temos um exemplo de requisição Put na rota boletins utilizando Insomnia:
+
+<img src= ./assets/img/boletins_put.png width=500>
 <br>
 
 
 ### Deletar um boletim:
 
-Utilizar o método HTTP Delete no caminho <b>"url da api" + /boletins/id</b>.
+Utilizar o método HTTP Delete no caminho: <b>url da api + /boletins/id</b>
 
 <br>
 <br>
+
 
 
 > ## Autores
