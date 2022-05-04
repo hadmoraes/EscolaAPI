@@ -118,13 +118,21 @@ Cada entidade representa uma rota em nossa API. Sendo assim, as rotas disponíve
  - "/turmas"
  - "/boletins"
 
-Acesse as rotas através do link <b> http://api--escola.herokuapp.com + /nome da rota </b>
+Acesse as rotas através copiando o link abaixo e alterando o nome da rota para a que deseja acessar:
+
+```
+http://api--escola.herokuapp.com + /nome da rota
+```
 
 <br>
 
 ## Url da API
 
-Estamos utilizando a hospedagem da Heroku, portanto, é possível utilizar o link <b> http://api--escola.herokuapp.com </b> em todas as rotas e métodos.
+Estamos utilizando a hospedagem da Heroku, portanto, é possível utilizar o link abaixo em todas as rotas e métodos:
+
+```
+http://api--escola.herokuapp.com
+```
 
 <br>
 
