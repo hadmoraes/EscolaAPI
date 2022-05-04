@@ -233,7 +233,7 @@ Insira novamente <em>todos</em> os campos presentes na entidade Docentes, da mes
 
 Na imagem abaixo temos um exemplo de requisição Put na rota docentes utilizando Insomnia:
 
-<img src= ./assets/img/docentes_put.png width=500>
+<img src= ./assets/img/docentes_put.png width=700>
 <br>
 
 
