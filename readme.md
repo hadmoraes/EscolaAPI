@@ -118,13 +118,21 @@ Cada entidade representa uma rota em nossa API. Sendo assim, as rotas disponíve
  - "/turmas"
  - "/boletins"
 
-Acesse as rotas através do link <b> http://api--escola.herokuapp.com + /nome da rota </b>
+Acesse as rotas através do link abaixo alterando o nome da rota para a desejada:
+
+```
+http://api--escola.herokuapp.com + /nome da rota
+```
 
 <br>
 
 ## Url da API
 
-Estamos utilizando a hospedagem da Heroku, portanto, é possível utilizar o link <b> http://api--escola.herokuapp.com </b> em todas as rotas e métodos.
+Estamos utilizando a hospedagem da Heroku, portanto, é possível utilizar o link abaixo em todas as rotas e métodos HTTP:
+
+```
+http://api--escola.herokuapp.com
+```
 
 <br>
 
@@ -150,7 +158,7 @@ No corpo da requisição é necessário inserir dados para todos os atributos de
 
 Especificações dos campos:
 
-- <strong> cpf </strong>: colocar todos os 11 digitos juntos sem quaisquer separação e entre aspas duplas
+- <strong> cpf </strong>: colocar todos os 11 dígitos juntos sem quaisquer separação e entre aspas duplas
 - <strong> nome </strong>: deve conter no mínimo 3 caracteres e ser inserido entre aspas duplas
 - <strong> email </strong>: deve ser inserido um email válido entre aspas duplas
 - <strong> telefone </strong>: deve ser inserido 11 dígitos, DDD seguido do número, sem quaiquer tipo de separação e entre aspas duplas
@@ -158,7 +166,7 @@ Especificações dos campos:
 
 Na imagem abaixo temos um exemplo de requisição Post na rota alunos utilizando Insomnia:
 
-<img src= ./assets/img/alunos_post.png width=800>
+<img src= ./assets/img/alunos_post.png width=500>
 
 <br>
 
@@ -170,7 +178,7 @@ Insira novamente <em>todos</em> os campos presentes na entidade Alunos, da mesma
 
 Na imagem abaixo temos um exemplo de requisição Put na rota alunos utilizando Insomnia:
 
-<img src= ./assets/img/alunos_put.png width=800>
+<img src= ./assets/img/alunos_put.png width=500>
 <br>
 
 
@@ -212,7 +220,7 @@ Especificações dos campos:
 
 Na imagem abaixo temos um exemplo de requisição Post na rota docentes utilizando Insomnia:
 
-<img src= ./assets/img/docentes_post.png width=800>
+<img src= ./assets/img/docentes_post.png width=500>
 
 <br>
 
@@ -225,7 +233,7 @@ Insira novamente <em>todos</em> os campos presentes na entidade Docentes, da mes
 
 Na imagem abaixo temos um exemplo de requisição Put na rota docentes utilizando Insomnia:
 
-<img src= ./assets/img/docentes_put.png width=800>
+<img src= ./assets/img/docentes_put.png width=500>
 <br>
 
 
@@ -266,7 +274,7 @@ Especificações dos campos:
 
 Na imagem abaixo temos um exemplo de requisição Post na rota cursos utilizando Insomnia:
 
-<img src= ./assets/img/cursos_post.png width=800>
+<img src= ./assets/img/cursos_post.png width=500>
 
 <br>
 
@@ -278,7 +286,7 @@ Insira novamente <em>todos</em> os campos presentes na entidade Cursos, da mesma
 
 Na imagem abaixo temos um exemplo de requisição Put na rota cursos utilizando Insomnia:
 
-<img src= ./assets/img/cursos_put.png width=800>
+<img src= ./assets/img/cursos_put.png width=500>
 <br>
 
 
@@ -322,7 +330,7 @@ Especificações dos campos:
 
 Na imagem abaixo temos um exemplo de requisição Post na rota turmas utilizando Insomnia:
 
-<img src= ./assets/img/turmas_post.png width=800>
+<img src= ./assets/img/turmas_post.png width=500>
 
 <br>
 
@@ -334,7 +342,7 @@ Insira novamente <em>todos</em> os campos presentes na entidade Turmas, da mesma
 
 Na imagem abaixo temos um exemplo de requisição Put na rota turmas utilizando Insomnia:
 
-<img src= ./assets/img/turmas_put.png width=800>
+<img src= ./assets/img/turmas_put.png width=500>
 <br>
 
 
@@ -380,7 +388,7 @@ Especificações dos campos:
 
 Na imagem abaixo temos um exemplo de requisição Post na rota boletins utilizando Insomnia:
 
-<img src= ./assets/img/boletins_post.png width=800>
+<img src= ./assets/img/boletins_post.png width=500>
 
 <br>
 
@@ -392,7 +400,7 @@ Insira novamente <em>todos</em> os campos presentes na entidade Turmas, da mesma
 
 Na imagem abaixo temos um exemplo de requisição Put na rota boletins utilizando Insomnia:
 
-<img src= ./assets/img/boletins_put.png width=800>
+<img src= ./assets/img/boletins_put.png width=500>
 <br>
 
 
