@@ -27,7 +27,10 @@ class Boletins{
 
         app.post("/boletins", async (req,res)=>{
             try {
-                if(Validacoes.validaNome(req.body.disciplina) && Validacoes.validaNumero(req.body.nota)){
+                const valido = Validacoes.validaNome(req.body.disciplina) && 
+                               Validacoes.validaNumero(req.body.nota);
+
+                if(valido){
                     const boletim = new BoletimModel(...Object.values(req.body));
                     const response = await DatabaseMetodosBoletins.popular(boletim);
                     res.status(201).json(response);
@@ -42,7 +45,10 @@ class Boletins{
 
         app.put("/boletins/:id", async (req,res)=>{
             try {
-                if(Validacoes.validaNome(req.body.disciplina) && Validacoes.validaNumero(req.body.nota)){
+                const valido = Validacoes.validaNome(req.body.disciplina) && 
+                               Validacoes.validaNumero(req.body.nota);
+                               
+                if(valido){
                     const id = req.params.id;
                     const boletim = new BoletimModel(...Object.values(req.body));
                     const response = await DatabaseMetodosBoletins.alteraPorId(id,boletim);

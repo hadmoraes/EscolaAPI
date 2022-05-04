@@ -28,7 +28,11 @@ class Turmas{
 
         app.post("/turmas", async (req,res)=>{
             try {
-                if(Validacoes.validaData(req.body.data_inicio) && Validacoes.validaData(req.body.data_final) && Validacoes.validaTurno(req.body.turno)){
+                const valido = Validacoes.validaData(req.body.data_inicio) && 
+                               Validacoes.validaData(req.body.data_final) && 
+                               Validacoes.validaTurno(req.body.turno);
+                               
+                if(valido){
                     const turma = new TurmaModel(...Object.values(req.body));
                     const response = await DatabaseMetodosTurmas.popular(turma);
                     res.status(201).json(response);
@@ -43,7 +47,11 @@ class Turmas{
 
         app.put("/turmas/:nome", async (req,res)=>{
             try {
-                if(Validacoes.validaData(req.body.data_inicio) && Validacoes.validaData(req.body.data_final) && Validacoes.validaTurno(req.body.turno)){
+                const valido = Validacoes.validaData(req.body.data_inicio) && 
+                               Validacoes.validaData(req.body.data_final) && 
+                               Validacoes.validaTurno(req.body.turno);
+
+                if(valido){
                     const nome = req.params.nome;
                     const turma = new TurmaModel(...Object.values(req.body));
                     const response = await DatabaseMetodosTurmas.alteraPorNome(nome,turma);

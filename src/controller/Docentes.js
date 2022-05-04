@@ -28,7 +28,14 @@ class Docentes{
 
         app.post("/docentes", async (req,res)=>{
             try {
-                if(Validacoes.validaNome(req.body.nome) && Validacoes.validaEmail(req.body.email) && Validacoes.validaCpf(req.body.cpf) && Validacoes.validaTelefone(req.body.telefone) && Validacoes.validaNumero(req.body.salario) && Validacoes.validaNome(req.body.disciplinas)){
+                const valido = Validacoes.validaNome(req.body.nome) && 
+                               Validacoes.validaEmail(req.body.email) && 
+                               Validacoes.validaCpf(req.body.cpf) && 
+                               Validacoes.validaTelefone(req.body.telefone) && 
+                               Validacoes.validaNumero(req.body.salario) && 
+                               Validacoes.validaNome(req.body.disciplinas);
+
+                if(valido){
                     const docente = new DocenteModel(...Object.values(req.body));
                     const response = await DatabaseMetodosDocentes.popular(docente);
                     res.status(201).json(response);
@@ -43,7 +50,14 @@ class Docentes{
 
         app.put("/docentes/:cpf", async (req,res)=>{
             try {
-                if(Validacoes.validaNome(req.body.nome) && Validacoes.validaEmail(req.body.email)  && Validacoes.validaCpf(req.body.cpf) && Validacoes.validaTelefone(req.body.telefone) && Validacoes.validaNumero(req.body.salario) && Validacoes.validaNome(req.body.disciplinas)){
+                const valido = Validacoes.validaNome(req.body.nome) && 
+                Validacoes.validaEmail(req.body.email) && 
+                Validacoes.validaCpf(req.body.cpf) && 
+                Validacoes.validaTelefone(req.body.telefone) && 
+                Validacoes.validaNumero(req.body.salario) && 
+                Validacoes.validaNome(req.body.disciplinas);
+
+                if(valido){
                     const cpf = req.params.cpf;
                     const docente = new DocenteModel(...Object.values(req.body));
                     const response = await DatabaseMetodosDocentes.alteraPorCpf(cpf,docente);

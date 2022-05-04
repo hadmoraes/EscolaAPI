@@ -28,7 +28,11 @@ class Cursos{
 
         app.post("/cursos", async (req,res)=>{
             try {
-                if(Validacoes.validaNome(req.body.nome) && Validacoes.validaNumero(req.body.carga_horaria) && Validacoes.validaNumero(req.body.preco)){
+                const valido = Validacoes.validaNome(req.body.nome) && 
+                               Validacoes.validaNumero(req.body.carga_horaria) && 
+                               Validacoes.validaNumero(req.body.preco);
+
+                if(valido){
                     const curso = new CursoModel(...Object.values(req.body));
                     const response = await DatabaseMetodosCursos.popular(curso);
                     res.status(201).json(response);
@@ -43,7 +47,11 @@ class Cursos{
 
         app.put("/cursos/:nome", async (req,res)=>{
             try {
-                if(Validacoes.validaNome(req.body.nome) && Validacoes.validaNumero(req.body.carga_horaria) && Validacoes.validaNumero(req.body.preco)){
+                const valido = Validacoes.validaNome(req.body.nome) && 
+                               Validacoes.validaNumero(req.body.carga_horaria) && 
+                               Validacoes.validaNumero(req.body.preco);
+                               
+                if(valido){
                     const nome = req.params.nome;
                     const curso = new CursoModel(...Object.values(req.body));
                     const response = await DatabaseMetodosCursos.alteraPorNome(nome,curso);

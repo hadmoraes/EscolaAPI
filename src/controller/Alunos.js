@@ -28,7 +28,13 @@ class Alunos{
 
         app.post("/alunos", async (req,res)=>{
             try {
-                if(Validacoes.validaNome(req.body.nome) && Validacoes.validaCpf(req.body.cpf) && Validacoes.validaEmail(req.body.email) && Validacoes.validaTelefone(req.body.telefone) && Validacoes.validaData(req.body.data_nascimento)){
+                const valido = Validacoes.validaNome(req.body.nome) && 
+                               Validacoes.validaCpf(req.body.cpf) && 
+                               Validacoes.validaEmail(req.body.email) && 
+                               Validacoes.validaTelefone(req.body.telefone) && 
+                               Validacoes.validaData(req.body.data_nascimento);
+                               
+                if(valido){
                     const aluno = new AlunoModel(...Object.values(req.body));
                     const response = await DatabaseMetodosAlunos.popular(aluno);
                     res.status(201).json(response);
@@ -44,7 +50,13 @@ class Alunos{
 
         app.put("/alunos/:cpf", async (req,res)=>{
             try {
-                if(Validacoes.validaNome(req.body.nome) && Validacoes.validaCpf(req.body.cpf) && Validacoes.validaEmail(req.body.email) && Validacoes.validaTelefone(req.body.telefone)  && Validacoes.validaData(req.body.data_nascimento)){
+                const valido = Validacoes.validaNome(req.body.nome) && 
+                Validacoes.validaCpf(req.body.cpf) && 
+                Validacoes.validaEmail(req.body.email) && 
+                Validacoes.validaTelefone(req.body.telefone) && 
+                Validacoes.validaData(req.body.data_nascimento);
+
+                if(valido){
                     const cpf = req.params.cpf;
                     const aluno = new AlunoModel(...Object.values(req.body));
                     const response = await DatabaseMetodosAlunos.alteraPorCpf(cpf,aluno);
