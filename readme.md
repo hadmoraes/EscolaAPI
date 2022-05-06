@@ -21,10 +21,11 @@ Para o desenvolvimento da API foi utilizado JavaScript com NodeJS e o framework 
 "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
-    "express": "^4.17.3",
+    "express": "^4.18.1",
+    "heroku": "^7.60.2",
     "moment": "^2.29.3",
     "path": "^0.12.7",
-    "sqlite3": "^5.0.5"
+    "sqlite3": "^5.0.6"
 }
 ```
 Todas dependências necessárias estão <a href = 'https://github.com/hadmoraes/EscolaAPI/blob/master/package.json'>neste arquivo</a>. Para fazer um clone do projeto basta copiar o código abaixo usando "Ctrl + c" e em seguida colar no terminal com as telas "Ctrl + Shift + v".
