@@ -30,7 +30,8 @@ class Turmas{
             try {
                 const valido = Validacoes.validaData(req.body.data_inicio) && 
                                Validacoes.validaData(req.body.data_final) && 
-                               Validacoes.validaTurno(req.body.turno);
+                               Validacoes.validaTurno(req.body.turno) &&
+                               Validacoes.validaNome(req.body.nome);
                                
                 if(valido){
                     const turma = new TurmaModel(...Object.values(req.body));
@@ -49,7 +50,8 @@ class Turmas{
             try {
                 const valido = Validacoes.validaData(req.body.data_inicio) && 
                                Validacoes.validaData(req.body.data_final) && 
-                               Validacoes.validaTurno(req.body.turno);
+                               Validacoes.validaTurno(req.body.turno) &&
+                               Validacoes.validaNome(req.body.nome);
 
                 if(valido){
                     const nome = req.params.nome;
