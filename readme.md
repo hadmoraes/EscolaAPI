@@ -98,7 +98,7 @@ A versão NodeJs utilizada para desenvolvimento é a 16.14.2, logo é necessári
 
 > ## Banco de dados
 
-Para construir a API foi necessária a modelagem e construção de um banco de dados. Para isso, utilizamos o site <a href = ' https://dbdiagram.io/home'> DBDiagram </a>  para modelagem de cada entidade e seus respectivos atributos, ilustrados na imagem abaixo.
+Para construir a API foi necessária a modelagem e construção de um banco de dados. Para isso, utilizamos o site <a href = 'https://dbdiagram.io/home'> DBDiagram </a>  para modelagem de cada entidade e seus respectivos atributos, ilustrados na imagem abaixo.
 
 <img src= ./assets/img/EscolaAPIDB.png width=900>
 
@@ -327,7 +327,7 @@ Especificações dos campos:
 - <strong> data_final </strong>: deve seguir o padrão DD/MM/AAAA com aspas duplas
 - <strong> turno </strong>: deve ser inserido com aspas duplas e só são aceitos manhã ou tarde, por exemplo, <em> "manhã" </em>
 
-<b> OBS: </b> todos os campos que fazem referência a um atributo presente em outras entidades devem <em>já existir</em> previamente. Ou seja, não será possível inserir um curso que não exista ainda.
+<b> OBS: </b> todos os campos que fazem referência a um atributo presente em outras entidades devem <em>já existir</em> previamente. 
 
 Na imagem abaixo temos um exemplo de requisição Post na rota turmas utilizando Insomnia:
 
@@ -385,7 +385,7 @@ Especificações dos campos:
 - <strong> nota </strong>: deve ser inserido o valor da nota sem aspas duplas e a casa decimal separada por ponto, por exemplo, <em> 8.5 </em>
 
 
-<b> OBS: </b> todos os campos que fazem referência a um atributo presente em outras entidades devem <em>já existir</em> previamente. Ou seja, não será possível inserir um docente, aluno ou turma que não existam ainda.
+<b> OBS: </b> todos os campos que fazem referência a um atributo presente em outras entidades devem <em>já existir</em> previamente. 
 
 Na imagem abaixo temos um exemplo de requisição Post na rota boletins utilizando Insomnia:
 
