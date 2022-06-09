@@ -60,7 +60,7 @@ npm i
 Essas são as dependências necessárias apenas para o ambiente de desenvolvimento da aplicação, caso deseje instalar utilize os comandos abaixo em seu terminal logo após o comando das dependências obrigatórias.
 
 ```
-npm i jest
+npm i jest --save-dev
 ```
 
 <br>
@@ -122,7 +122,7 @@ Cada entidade representa uma rota em nossa API. Sendo assim, as rotas disponíve
 Acesse as rotas através do link abaixo alterando o nome da rota para a desejada:
 
 ```
-http://api--escola.herokuapp.com + /nome da rota
+https://api--escola.herokuapp.com + /nome da rota
 ```
 
 <br>
@@ -132,7 +132,7 @@ http://api--escola.herokuapp.com + /nome da rota
 Estamos utilizando a hospedagem da Heroku, portanto, é possível utilizar o link abaixo em todas as rotas e métodos HTTP:
 
 ```
-http://api--escola.herokuapp.com
+https://api--escola.herokuapp.com
 ```
 
 <br>
